@@ -1,0 +1,30 @@
+import java.util.Scanner;  //se importo Scanner
+
+public class Codigo5 {
+
+    public static void main(String[] args) { //se agrego static void
+        Scanner s = new Scanner(System.in); // se agrego System.in del objeto 
+        System.out.print("Introduzca un número: "); //se agrago para pedir el numero
+        String ni = s.nextLine();
+        int c = Integer.parseInt(ni);  // se agrego para convertir de String a int
+        
+        int afo = 0;
+        int noAfo = 0;
+        
+        while (c > 0) {   // se uso while con la variable c que es String
+            int digito = c % 10; // se cambio el tipo de operacion ya que no se puede usar /= 10 hay convertirlo primero a int.
+            if (digito == 3 || digito == 7 || digito == 8 || digito == 9) {
+                afo++;
+            } else {
+                noAfo++;
+            }
+            c /= 10;
+        }
+        
+        if (afo > noAfo) {
+            System.out.println("El número es afortunado.");
+        } else {
+            System.out.println("El número no es afortunado.");
+        }
+    }
+}
